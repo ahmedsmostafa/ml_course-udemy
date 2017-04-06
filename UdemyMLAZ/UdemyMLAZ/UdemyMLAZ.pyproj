@@ -26,16 +26,6 @@
     <Compile Include="01-data-preprocessing.py" />
     <Compile Include="02-simple-linearregression.py" />
     <Compile Include="pyspark.py" />
-    <Compile Include="Simple_Linear_Regression\data_preprocessing_template.py" />
-    <Compile Include="Simple_Linear_Regression\simple_linear_regression.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Simple_Linear_Regression\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Simple_Linear_Regression\data_preprocessing_template.R" />
-    <Content Include="Simple_Linear_Regression\Salary_Data.csv" />
-    <Content Include="Simple_Linear_Regression\simple_linear_regression.R" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
