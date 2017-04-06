@@ -44,7 +44,6 @@ y_pred = regressor.predict(X_test)
 plt.scatter(X_train, y_train, color='red')
 # now plot this versus the prediction of the training set itself
 plt.plot(X_train, regressor.predict(X_train), color='green')
-
 plt.title('Salary vs Experience (training set results)')
 plt.xlabel('X - years of experience')
 plt.ylabel('y - salary')

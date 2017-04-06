@@ -7,7 +7,7 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "UdemyMLAZ", "UdemyMLAZ\Udem
 EndProject
 Project("{DA7A21FA-8162-4350-AD77-A8D1B671F3ED}") = "UdemyMLAZ_R", "UdemyMLAZ_R\UdemyMLAZ_R.rxproj", "{BF5D172F-CF93-4F5A-95C4-6D78BB2740F9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple Linear Regression", "Simple Linear Regression", "{54038084-E802-4230-B73A-9073563BCE2B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple_Linear_Regression", "Simple_Linear_Regression", "{54038084-E802-4230-B73A-9073563BCE2B}"
 	ProjectSection(SolutionItems) = preProject
 		UdemyMLAZ\Simple_Linear_Regression\data_preprocessing_template.py = UdemyMLAZ\Simple_Linear_Regression\data_preprocessing_template.py
 		UdemyMLAZ\Simple_Linear_Regression\data_preprocessing_template.R = UdemyMLAZ\Simple_Linear_Regression\data_preprocessing_template.R
