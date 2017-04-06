@@ -16,6 +16,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple_Linear_Regression", 
 		Simple_Linear_Regression\simple_linear_regression.R = Simple_Linear_Regression\simple_linear_regression.R
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multiple_Linear_Regression", "Multiple_Linear_Regression", "{B0C5D3C6-6721-4980-BE4F-F9663FD37019}"
+	ProjectSection(SolutionItems) = preProject
+		Multiple_Linear_Regression\50_Startups.csv = Multiple_Linear_Regression\50_Startups.csv
+		Multiple_Linear_Regression\data_preprocessing_template.py = Multiple_Linear_Regression\data_preprocessing_template.py
+		Multiple_Linear_Regression\data_preprocessing_template.R = Multiple_Linear_Regression\data_preprocessing_template.R
+		Multiple_Linear_Regression\multiple_linear_regression.py = Multiple_Linear_Regression\multiple_linear_regression.py
+		Multiple_Linear_Regression\multiple_linear_regression.R = Multiple_Linear_Regression\multiple_linear_regression.R
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
