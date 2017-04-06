@@ -9,11 +9,11 @@ Project("{DA7A21FA-8162-4350-AD77-A8D1B671F3ED}") = "UdemyMLAZ_R", "UdemyMLAZ_R\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple_Linear_Regression", "Simple_Linear_Regression", "{54038084-E802-4230-B73A-9073563BCE2B}"
 	ProjectSection(SolutionItems) = preProject
-		UdemyMLAZ\Simple_Linear_Regression\data_preprocessing_template.py = UdemyMLAZ\Simple_Linear_Regression\data_preprocessing_template.py
-		UdemyMLAZ\Simple_Linear_Regression\data_preprocessing_template.R = UdemyMLAZ\Simple_Linear_Regression\data_preprocessing_template.R
-		UdemyMLAZ\Simple_Linear_Regression\Salary_Data.csv = UdemyMLAZ\Simple_Linear_Regression\Salary_Data.csv
-		UdemyMLAZ\Simple_Linear_Regression\simple_linear_regression.py = UdemyMLAZ\Simple_Linear_Regression\simple_linear_regression.py
-		UdemyMLAZ\Simple_Linear_Regression\simple_linear_regression.R = UdemyMLAZ\Simple_Linear_Regression\simple_linear_regression.R
+		Simple_Linear_Regression\data_preprocessing_template.py = Simple_Linear_Regression\data_preprocessing_template.py
+		Simple_Linear_Regression\data_preprocessing_template.R = Simple_Linear_Regression\data_preprocessing_template.R
+		Simple_Linear_Regression\Salary_Data.csv = Simple_Linear_Regression\Salary_Data.csv
+		Simple_Linear_Regression\simple_linear_regression.py = Simple_Linear_Regression\simple_linear_regression.py
+		Simple_Linear_Regression\simple_linear_regression.R = Simple_Linear_Regression\simple_linear_regression.R
 	EndProjectSection
 EndProject
 Global
