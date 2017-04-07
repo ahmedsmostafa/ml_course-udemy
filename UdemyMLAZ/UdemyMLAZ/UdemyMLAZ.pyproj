@@ -25,6 +25,9 @@
   <ItemGroup>
     <Compile Include="01-data-preprocessing.py" />
     <Compile Include="02-simple-linearregression.py" />
+    <Compile Include="03-multi-linearregression.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>
