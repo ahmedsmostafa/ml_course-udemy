@@ -81,17 +81,17 @@ def applyBackwardElimination(X,y):
         X_opt = X[:,indices_list]
 
 
-    current_dir = os.getcwd()
-    dataset = pd.read_csv("..\\Multiple_Linear_Regression\\50_Startups.csv")
-    dataset
+current_dir = os.getcwd()
+dataset = pd.read_csv("..\\Multiple_Linear_Regression\\50_Startups.csv")
+dataset
 
-    #matrix of our inputs
-    X = dataset.iloc[:,:-1].values
+#matrix of our inputs
+X = dataset.iloc[:,:-1].values
 
-    #facts vector
-    y = dataset.iloc[:,-1].values
+#facts vector
+y = dataset.iloc[:,-1].values
 
-    '''
+'''
     # we have 2 ways to fill NaN values:
     ## 1- calculating the mean yourself and filling it in your dataset
     age_mean = dataset["Age"].mean()
@@ -104,47 +104,42 @@ def applyBackwardElimination(X,y):
     imputer = Imputer(missing_values="NaN", strategy="mean", axis=0)
     imputer = imputer.fit(X[:,1:3])
     X[:,1:3] = imputer.transform(X[:,1:3])
-    '''
+'''
 
     # categorize the string COUNTRIES column to numerical categories using Scikit learn
-    from sklearn.preprocessing import LabelEncoder, OneHotEncoder
-    labelencoder_X = LabelEncoder()
-    X[:,-1] = labelencoder_X.fit_transform(X[:,-1])
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+labelencoder_X = LabelEncoder()
+X[:,-1] = labelencoder_X.fit_transform(X[:,-1])
 
     # convert numerical categories to independnet dummy variables
-    onehotencoder = OneHotEncoder(categorical_features=[3])
-    X = onehotencoder.fit_transform(X).toarray()
+onehotencoder = OneHotEncoder(categorical_features=[3])
+X = onehotencoder.fit_transform(X).toarray()
 
     # Avoiding the dummy variable trap
-    X = X[:,1:]
+X = X[:,1:]
 
 
     # NOW the data is cleansed, you should SPLIT the data to training & test sets
-    from sklearn.cross_validation import train_test_split
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+from sklearn.cross_validation import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
-    '''
+'''
     # Not needed as MLR will take care of feature scaling
     # Once data is cleansed, categorized.. you need to apply feature scaling
     from sklearn.preprocessing import StandardScaler
     sc_X = StandardScaler()
     X_train = sc_X.fit_transform(X_train)
     X_test = sc_X.transform(X_test)
-    '''
+'''
 
     # apply linear regression
-    from sklearn.linear_model import LinearRegression
-    regressor = LinearRegression()
-    regressor.fit(X_train, y_train)
+from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+regressor.fit(X_train, y_train)
 
     # apply prediction
-    y_pred = regressor.predict(X_test)
+y_pred = regressor.predict(X_test)
 
-    results = applyBackwardElimination(X,y)
+results = applyBackwardElimination(X,y)
 
-    print(results.summary())
-
-    
-
-if __name__ == "__main__":
-    main()
+print(results.summary())

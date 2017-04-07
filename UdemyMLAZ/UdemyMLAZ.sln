@@ -25,6 +25,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multiple_Linear_Regression"
 		Multiple_Linear_Regression\multiple_linear_regression.R = Multiple_Linear_Regression\multiple_linear_regression.R
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Polynomial_Regression", "Polynomial_Regression", "{3EB66AC3-0662-4632-B690-CA147A5A0478}"
+	ProjectSection(SolutionItems) = preProject
+		Polynomial_Regression\data_preprocessing_template.py = Polynomial_Regression\data_preprocessing_template.py
+		Polynomial_Regression\data_preprocessing_template.R = Polynomial_Regression\data_preprocessing_template.R
+		Polynomial_Regression\polynomial_regression.py = Polynomial_Regression\polynomial_regression.py
+		Polynomial_Regression\polynomial_regression.R = Polynomial_Regression\polynomial_regression.R
+		Polynomial_Regression\Position_Salaries.csv = Polynomial_Regression\Position_Salaries.csv
+		Polynomial_Regression\regression_template.py = Polynomial_Regression\regression_template.py
+		Polynomial_Regression\regression_template.R = Polynomial_Regression\regression_template.R
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

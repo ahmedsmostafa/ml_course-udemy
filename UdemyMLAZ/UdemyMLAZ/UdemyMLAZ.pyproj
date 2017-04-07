@@ -28,6 +28,9 @@
     <Compile Include="03-multi-linearregression.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="04-polynomial-linearregression.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>
