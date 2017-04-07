@@ -36,6 +36,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Polynomial_Regression", "Po
 		Polynomial_Regression\regression_template.R = Polynomial_Regression\regression_template.R
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SupportVector_Regression", "SupportVector_Regression", "{0293FBE6-7FD3-4BE4-A38E-08122E51BCA3}"
+	ProjectSection(SolutionItems) = preProject
+		SupportVector_Regression\Position_Salaries.csv = SupportVector_Regression\Position_Salaries.csv
+		SupportVector_Regression\regression_template.py = SupportVector_Regression\regression_template.py
+		SupportVector_Regression\regression_template.R = SupportVector_Regression\regression_template.R
+		SupportVector_Regression\svr.py = SupportVector_Regression\svr.py
+		SupportVector_Regression\svr.R = SupportVector_Regression\svr.R
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
