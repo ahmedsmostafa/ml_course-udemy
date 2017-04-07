@@ -31,6 +31,10 @@
     <Compile Include="04-polynomial-linearregression.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="05-supportvector-regression.py" />
+    <Compile Include="06-decisiontree_regression.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>

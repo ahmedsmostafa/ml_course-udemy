@@ -45,6 +45,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SupportVector_Regression", 
 		SupportVector_Regression\svr.R = SupportVector_Regression\svr.R
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DecisionTree_Regression", "DecisionTree_Regression", "{9240CA84-8682-4AF8-A228-5CDC1AFDEA27}"
+	ProjectSection(SolutionItems) = preProject
+		DecisionTree_Regression\decision_tree_regression.py = DecisionTree_Regression\decision_tree_regression.py
+		DecisionTree_Regression\decision_tree_regression.R = DecisionTree_Regression\decision_tree_regression.R
+		DecisionTree_Regression\Position_Salaries.csv = DecisionTree_Regression\Position_Salaries.csv
+		DecisionTree_Regression\regression_template.py = DecisionTree_Regression\regression_template.py
+		DecisionTree_Regression\regression_template.R = DecisionTree_Regression\regression_template.R
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
