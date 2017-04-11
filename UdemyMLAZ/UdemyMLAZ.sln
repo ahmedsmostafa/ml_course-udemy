@@ -54,6 +54,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DecisionTree_Regression", "
 		DecisionTree_Regression\regression_template.R = DecisionTree_Regression\regression_template.R
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RandomForest_Regression", "RandomForest_Regression", "{61AFE4B1-27EE-4975-8849-1A9CB74BC195}"
+	ProjectSection(SolutionItems) = preProject
+		RandomForest_Regression\Position_Salaries.csv = RandomForest_Regression\Position_Salaries.csv
+		RandomForest_Regression\random_forest_regression.py = RandomForest_Regression\random_forest_regression.py
+		RandomForest_Regression\random_forest_regression.R = RandomForest_Regression\random_forest_regression.R
+		RandomForest_Regression\regression_template.py = RandomForest_Regression\regression_template.py
+		RandomForest_Regression\regression_template.R = RandomForest_Regression\regression_template.R
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

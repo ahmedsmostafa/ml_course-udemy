@@ -1,5 +1,7 @@
-dataset = read.csv("..\\DecisionTree_Regression\\Position_Salaries.csv")
+# Regression Template
 
+# Importing the dataset
+dataset = read.csv('Position_Salaries.csv')
 dataset = dataset[2:3]
 
 # Splitting the dataset into the Training set and Test set
@@ -14,16 +16,13 @@ dataset = dataset[2:3]
 # training_set = scale(training_set)
 # test_set = scale(test_set)
 
-# Fitting the SVR Model to the dataset
+# Fitting the Regression Model to the dataset
 # Create your regressor here
-#install.packages('e1071')
-library(rpart)
-regressor = rpart(formula = Salary ~ ., data = dataset, control = rpart.control(minsplit = 1) )
 
 # Predicting a new result
 y_pred = predict(regressor, data.frame(Level = 6.5))
 
-# Visualising the DT Model results
+# Visualising the Regression Model results
 # install.packages('ggplot2')
 library(ggplot2)
 ggplot() +
@@ -35,10 +34,10 @@ ggplot() +
   xlab('Level') +
   ylab('Salary')
 
-# Visualising the DT Model results (for higher resolution and smoother curve)
+# Visualising the Regression Model results (for higher resolution and smoother curve)
 # install.packages('ggplot2')
 library(ggplot2)
-x_grid = seq(min(dataset$Level), max(dataset$Level), 0.01)
+x_grid = seq(min(dataset$Level), max(dataset$Level), 0.1)
 ggplot() +
   geom_point(aes(x = dataset$Level, y = dataset$Salary),
              colour = 'red') +

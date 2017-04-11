@@ -35,6 +35,9 @@
     <Compile Include="06-decisiontree_regression.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="07-randomforest-regression.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>
