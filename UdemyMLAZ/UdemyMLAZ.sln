@@ -63,6 +63,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RandomForest_Regression", "
 		RandomForest_Regression\regression_template.R = RandomForest_Regression\regression_template.R
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LogisticRegression", "LogisticRegression", "{17762724-6FC3-4A71-B8C8-6F104C6C5AFC}"
+	ProjectSection(SolutionItems) = preProject
+		LogisticRegression\classification_template.py = LogisticRegression\classification_template.py
+		LogisticRegression\classification_template.R = LogisticRegression\classification_template.R
+		LogisticRegression\logistic_regression.py = LogisticRegression\logistic_regression.py
+		LogisticRegression\logistic_regression.R = LogisticRegression\logistic_regression.R
+		LogisticRegression\Social_Network_Ads.csv = LogisticRegression\Social_Network_Ads.csv
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

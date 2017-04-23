@@ -38,6 +38,9 @@
     <Compile Include="07-randomforest-regression.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="08-logistic-regression-classification.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>
