@@ -12,7 +12,10 @@ import os
 # 2- Importing the dataset
 
 current_dir = os.getcwd()
-dataset = pd.read_csv("..\\Simple_Linear_Regression\\Salary_Data.csv")
+try:
+    dataset = pd.read_csv("..\\Simple_Linear_Regression\\Salary_Data.csv")
+except:
+    dataset = pd.read_csv("UdemyMLAZ\\Simple_Linear_Regression\\Salary_Data.csv")
 dataset
 
 # 3- Split X,y

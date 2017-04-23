@@ -4,10 +4,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import os
+
+cwd = os.getcwd()
 np.set_printoptions(threshold=np.nan)
 
 # Importing the dataset
-dataset = pd.read_csv('..\\SupportVector_Regression\\Position_Salaries.csv')
+try:
+    dataset = pd.read_csv('..\\SupportVector_Regression\\Position_Salaries.csv')
+except:
+    dataset = pd.read_csv('UdemyMLAZ\\SupportVector_Regression\\Position_Salaries.csv')
+dataset
+
 X = dataset.iloc[:, 1:2].values
 y = dataset.iloc[:, 2].values
 

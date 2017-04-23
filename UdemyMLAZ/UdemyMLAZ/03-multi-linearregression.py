@@ -82,7 +82,10 @@ def applyBackwardElimination(X,y):
 
 
 current_dir = os.getcwd()
-dataset = pd.read_csv("..\\Multiple_Linear_Regression\\50_Startups.csv")
+try:
+    dataset = pd.read_csv("..\\Multiple_Linear_Regression\\50_Startups.csv")
+except:
+    dataset = pd.read_csv("UdemyMLAZ\\Multiple_Linear_Regression\\50_Startups.csv")
 dataset
 
 #matrix of our inputs

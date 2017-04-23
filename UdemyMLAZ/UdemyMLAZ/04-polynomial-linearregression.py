@@ -3,9 +3,14 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
+cwd = os.getcwd()
 np.set_printoptions(threshold=np.nan)
-current_dir = os.getcwd()
-dataset = pd.read_csv("..\\Polynomial_Regression\\Position_Salaries.csv")
+
+# Importing the dataset
+try:
+    dataset = pd.read_csv("..\\Polynomial_Regression\\Position_Salaries.csv")
+except:
+    dataset = pd.read_csv('UdemyMLAZ\\Polynomial_Regression\\Position_Salaries.csv')
 dataset
 
 #matrix of our inputs
