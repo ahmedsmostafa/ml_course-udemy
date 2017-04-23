@@ -41,6 +41,7 @@
     <Compile Include="08-logistic-regression-classification.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="09-knn-classification.py" />
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>
