@@ -90,6 +90,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SVM_Classification", "SVM_C
 		SVM_Classification\svm.R = SVM_Classification\svm.R
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SVM_Kernel_Classification", "SVM_Kernel_Classification", "{BF5243F2-45E9-4394-BB22-F54B96F4C022}"
+	ProjectSection(SolutionItems) = preProject
+		SVM_Kernel_Classification\classification_template.py = SVM_Kernel_Classification\classification_template.py
+		SVM_Kernel_Classification\classification_template.R = SVM_Kernel_Classification\classification_template.R
+		SVM_Kernel_Classification\kernel_svm.py = SVM_Kernel_Classification\kernel_svm.py
+		SVM_Kernel_Classification\kernel_svm.R = SVM_Kernel_Classification\kernel_svm.R
+		SVM_Kernel_Classification\Social_Network_Ads.csv = SVM_Kernel_Classification\Social_Network_Ads.csv
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
