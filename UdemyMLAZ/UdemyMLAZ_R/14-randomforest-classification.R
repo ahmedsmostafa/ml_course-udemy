@@ -26,12 +26,14 @@ test_set[-3] = scale(test_set[-3])
 library(randomForest)
 classifier = randomForest(x = training_set[-3],
                           y = training_set$Purchased,
-                          ntree = 500)
+                          ntree = 10)
 # Predicting the Test set results
 y_pred = predict(classifier, newdata = test_set[-3], type = 'class')
-
+y_pred
+test_set$Purchased
 # Making the Confusion Matrix
-cm = table(test_set[, 3], y_pred)
+# cm = table(test_set[, 3], y_pred)
+cm = table(test_set$Purchased, y_pred)
 cm
 
 # Visualising the Training set results
