@@ -117,6 +117,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DecisionTree_Classification
 		DecisionTree_Classification\Social_Network_Ads.csv = DecisionTree_Classification\Social_Network_Ads.csv
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RandomForest_Classification", "RandomForest_Classification", "{8A6EE176-33CF-4A55-9306-831B86CCEE08}"
+	ProjectSection(SolutionItems) = preProject
+		RandomForest_Classification\classification_template.py = RandomForest_Classification\classification_template.py
+		RandomForest_Classification\classification_template.R = RandomForest_Classification\classification_template.R
+		RandomForest_Classification\random_forest_classification.py = RandomForest_Classification\random_forest_classification.py
+		RandomForest_Classification\random_forest_classification.R = RandomForest_Classification\random_forest_classification.R
+		RandomForest_Classification\Social_Network_Ads.csv = RandomForest_Classification\Social_Network_Ads.csv
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
