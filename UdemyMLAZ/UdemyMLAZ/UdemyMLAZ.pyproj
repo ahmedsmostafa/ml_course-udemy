@@ -51,6 +51,7 @@
     <Compile Include="12-naivebayes-classification.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="13-decisiontree-classification.py" />
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>
