@@ -144,6 +144,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hierarchical_Clustering", "
 		Hierarchical_Clustering\Mall_Customers.csv = Hierarchical_Clustering\Mall_Customers.csv
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssociationRulesLearning_Apriori", "AssociationRulesLearning_Apriori", "{667C6268-FEB3-47BA-AEB1-AAC377BD11D5}"
+	ProjectSection(SolutionItems) = preProject
+		AssociationRulesLearning_Apriori\apriori.py = AssociationRulesLearning_Apriori\apriori.py
+		AssociationRulesLearning_Apriori\apriori.R = AssociationRulesLearning_Apriori\apriori.R
+		AssociationRulesLearning_Apriori\apyori.py = AssociationRulesLearning_Apriori\apyori.py
+		AssociationRulesLearning_Apriori\Market_Basket_Optimisation.csv = AssociationRulesLearning_Apriori\Market_Basket_Optimisation.csv
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssociationRulesLearning_Eclat", "AssociationRulesLearning_Eclat", "{D56F178D-A18F-49BF-8FF2-25B174DC1A93}"
+	ProjectSection(SolutionItems) = preProject
+		AssociationRulesLearning_Eclat\eclat.R = AssociationRulesLearning_Eclat\eclat.R
+		AssociationRulesLearning_Eclat\Market_Basket_Optimisation.csv = AssociationRulesLearning_Eclat\Market_Basket_Optimisation.csv
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

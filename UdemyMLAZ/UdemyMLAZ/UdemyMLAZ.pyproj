@@ -61,6 +61,9 @@
     <Compile Include="16-hierarchical-clustering.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="17-associationruleslearning_apriori.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>
