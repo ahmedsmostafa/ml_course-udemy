@@ -15,70 +15,45 @@ except:
 dataset
 
 #extract features & outcomes from data
-X = dataset.iloc[:, [2, 3]].values
-y = dataset.iloc[:, 4].values
+X = dataset.iloc[:, [-2, -1]].values
 
-# Splitting the dataset into the Training set and Test set
-from sklearn.cross_validation import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
+#there is no y because we have no predictions/outcomes
 
-# Feature Scaling
-from sklearn.preprocessing import StandardScaler
-sc = StandardScaler()
-X_train = sc.fit_transform(X_train)
-X_test = sc.transform(X_test)
+# Using the elbow method to find the optimal number of clusters
+from sklearn.cluster import KMeans
 
-# Fitting classifier to the Training set
-# Create your classifier here, play with different kernels now
-from sklearn.ensemble import RandomForestClassifier
-classifier = RandomForestClassifier(n_estimators = 10, criterion='entropy', random_state=0)
-classifier.fit(X_train, y_train)
+# calculate the within cluster sum of square and plot the 10 iterations
+# wcss = inertia
 
-# Predicting the Test set results
-y_pred = classifier.predict(X_test)
-y_pred
-y_test
+wcss = []
+silhouette_scores = []
+for i in range(1,11):
+    # we will fit the kmeans to X using i
+    kmeans = KMeans(n_clusters = i, init= 'k-means++', max_iter = 300, n_init = 10, random_state = 0)
+    kmeans.fit(X)
+    # calculate wcss and append it to wcss list
+    wcss.append(kmeans.inertia_)
 
-accuracy = classifier.score(X_test, y_test)
-accuracy
-
-# Making the Confusion Matrix
-from sklearn.metrics import confusion_matrix
-cm = confusion_matrix(y_test, y_pred)
-cm
-
-# Visualising the Training set results
-from matplotlib.colors import ListedColormap
-X_set, y_set = X_train, y_train
-X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 1, stop = X_set[:, 0].max() + 1, step = 0.01),
-                     np.arange(start = X_set[:, 1].min() - 1, stop = X_set[:, 1].max() + 1, step = 0.01))
-plt.contourf(X1, X2, classifier.predict(np.array([X1.ravel(), X2.ravel()]).T).reshape(X1.shape),
-             alpha = 0.75, cmap = ListedColormap(('red', 'green')))
-plt.xlim(X1.min(), X1.max())
-plt.ylim(X2.min(), X2.max())
-for i, j in enumerate(np.unique(y_set)):
-    plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1],
-                c = ListedColormap(('red', 'green'))(i), label = j)
-plt.title('RandomForst Classification (Training set)')
-plt.xlabel('Age')
-plt.ylabel('Estimated Salary')
-plt.legend()
+plt.plot(range(1,11), wcss)
+plt.title("The elbow method")
+plt.xlabel("Clusters #")
+plt.ylabel("WCSS")
 plt.show()
 
-# Visualising the Test set results
-from matplotlib.colors import ListedColormap
-X_set, y_set = X_test, y_test
-X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 1, stop = X_set[:, 0].max() + 1, step = 0.01),
-                     np.arange(start = X_set[:, 1].min() - 1, stop = X_set[:, 1].max() + 1, step = 0.01))
-plt.contourf(X1, X2, classifier.predict(np.array([X1.ravel(), X2.ravel()]).T).reshape(X1.shape),
-             alpha = 0.75, cmap = ListedColormap(('red', 'green')))
-plt.xlim(X1.min(), X1.max())
-plt.ylim(X2.min(), X2.max())
-for i, j in enumerate(np.unique(y_set)):
-    plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1],
-                c = ListedColormap(('red', 'green'))(i), label = j)
-plt.title('RandomForst Classification (Test set)')
-plt.xlabel('Age')
-plt.ylabel('Estimated Salary')
+kmeans = KMeans(n_clusters = 5, init = 'k-means++', max_iter = 300, n_init = 10, random_state = 0)
+ykmeans = kmeans.fit_predict(X)
+
+#visualize clusters
+plt.title('Clusters of customers')
+plt.xlabel('Annual Income in 1000')
+plt.ylabel('Spending Score')
+plt.scatter(X[ykmeans == 0,0], X[ykmeans == 0, 1], s = 100, c = 'red', label='Careful')
+plt.scatter(X[ykmeans == 1,0], X[ykmeans == 1, 1], s = 100, c = 'blue', label='Standard')
+plt.scatter(X[ykmeans == 2,0], X[ykmeans == 2, 1], s = 100, c = 'green', label='Platinum')
+plt.scatter(X[ykmeans == 3,0], X[ykmeans == 3, 1], s = 100, c = 'cyan', label='Careless')
+plt.scatter(X[ykmeans == 4,0], X[ykmeans == 4, 1], s = 100, c = 'magenta', label='Senisble')
+#plt.show()
+#plot centroids
+plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:,1], s = 300, c = 'yellow', label = 'Centroids')
 plt.legend()
 plt.show()
