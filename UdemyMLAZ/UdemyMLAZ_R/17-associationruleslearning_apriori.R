@@ -1,4 +1,4 @@
-#install.packages('arules')
+install.packages('arules')
 
 library(arules)
 dataset = read.csv("..\\AssociationRulesLearning_Apriori\\Market_Basket_Optimisation.csv", header = FALSE)
@@ -12,5 +12,5 @@ summary(dataset)
 itemFrequencyPlot(dataset, topN=100)
 
 #training apriori
-rules = apriori(data = dataset, parameter = list(support = 0.03, confidence = 0.8))
+rules = apriori(data = dataset, parameter = list(support = 0.02, confidence = 0.4))
 
