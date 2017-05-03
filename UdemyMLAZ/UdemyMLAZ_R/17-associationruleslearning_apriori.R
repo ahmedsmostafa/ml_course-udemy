@@ -1,4 +1,4 @@
-install.packages('arules')
+#install.packages('arules')
 
 library(arules)
 dataset = read.csv("..\\AssociationRulesLearning_Apriori\\Market_Basket_Optimisation.csv", header = FALSE)
