@@ -32,10 +32,11 @@ Ri(n): the sum of rewards of the ad i up to round n
 we do 10,000 rounds to the size of dataset
 """
 N = len(dataset)
-count_of_selection = [0] * len(dataset.columns)
-sum_of_rewards = [0] * len(dataset.columns)
+d = len(dataset.columns)
 ads_selected = []
 total_reward = 0
+count_of_selection = [0] * d
+sum_of_rewards = [0] * d
 best_ad = 0
 for n in range(0,N):
     """
@@ -45,7 +46,7 @@ for n in range(0,N):
     """
     max_upperbound = 0
     ad = 0
-    for i in range(0,len(dataset.columns)):
+    for i in range(0,d):
         if(count_of_selection[i] > 0):
             average_reward = sum_of_rewards[i] / count_of_selection[i]
             #use log(n+1) because n starts with zero and log(0) is not defined
@@ -67,11 +68,11 @@ for n in range(0,N):
     sum_of_rewards[ad] += reward
     total_reward += reward
     
-    """
-    step3: we select the ad i that has the maximum upperbound
-    """
-    best_ad = sum_of_rewards.index(max(sum_of_rewards))
-    print("the best ad is Ad %d with value %d" % (best_ad, sum_of_rewards[best_ad]))
+"""
+step3: we select the ad i that has the maximum upperbound
+"""
+best_ad = sum_of_rewards.index(max(sum_of_rewards))
+print("the best ad is Ad %d with value %d" % (best_ad, sum_of_rewards[best_ad]))
 
 #plot ads and access frequency
 plt.hist(ads_selected)
