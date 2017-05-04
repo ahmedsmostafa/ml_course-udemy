@@ -61,10 +61,11 @@
     <Compile Include="16-hierarchical-clustering.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="17-associationruleslearning_apriori.py">
+    <Compile Include="17-associationruleslearning-apriori.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="19-reinforcementlearningUCB.py">
+    <Compile Include="20-reinforcementlearning-thompsonsampling.py" />
+    <Compile Include="19-reinforcementlearning-UCB.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="pyspark.py" />

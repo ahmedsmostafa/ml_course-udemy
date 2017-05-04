@@ -168,6 +168,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReinforcementLearning_Upper
 		ReinforcementLearning_UpperConfidenceBound\upper_confidence_bound.R = ReinforcementLearning_UpperConfidenceBound\upper_confidence_bound.R
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReinforcementLearning_ThompsonSampling", "ReinforcementLearning_ThompsonSampling", "{3DC84B34-A568-4335-8938-2514B5A55943}"
+	ProjectSection(SolutionItems) = preProject
+		ReinforcementLearning_ThompsonSampling\Ads_CTR_Optimisation.csv = ReinforcementLearning_ThompsonSampling\Ads_CTR_Optimisation.csv
+		ReinforcementLearning_ThompsonSampling\random_selection.py = ReinforcementLearning_ThompsonSampling\random_selection.py
+		ReinforcementLearning_ThompsonSampling\random_selection.R = ReinforcementLearning_ThompsonSampling\random_selection.R
+		ReinforcementLearning_ThompsonSampling\thompson_sampling.py = ReinforcementLearning_ThompsonSampling\thompson_sampling.py
+		ReinforcementLearning_ThompsonSampling\thompson_sampling.R = ReinforcementLearning_ThompsonSampling\thompson_sampling.R
+		ReinforcementLearning_ThompsonSampling\Thompson_Sampling_Slide.png = ReinforcementLearning_ThompsonSampling\Thompson_Sampling_Slide.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
