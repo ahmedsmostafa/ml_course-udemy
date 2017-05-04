@@ -64,6 +64,9 @@
     <Compile Include="17-associationruleslearning_apriori.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="19-reinforcementlearningUCB.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>
