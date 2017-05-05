@@ -1,1 +1,1 @@
-dataset = read.csv("..\\NaturalLanguageProcessing\\Restaurant_Reviews.tsv", header = FALSE)
+dataset = read.delim("..\\NaturalLanguageProcessing\\Restaurant_Reviews.tsv", header = TRUE, quote = '')
