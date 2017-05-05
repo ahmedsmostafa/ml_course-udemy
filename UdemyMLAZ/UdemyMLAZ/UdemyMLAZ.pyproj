@@ -68,6 +68,9 @@
     <Compile Include="19-reinforcementlearning-UCB.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="21-naturallanguageprocessing.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>

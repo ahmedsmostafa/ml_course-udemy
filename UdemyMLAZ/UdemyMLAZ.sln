@@ -178,6 +178,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReinforcementLearning_Thomp
 		ReinforcementLearning_ThompsonSampling\Thompson_Sampling_Slide.png = ReinforcementLearning_ThompsonSampling\Thompson_Sampling_Slide.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NaturalLanguageProcessing", "NaturalLanguageProcessing", "{B6786A3C-2BD4-4FA3-833A-6EEABA48061E}"
+	ProjectSection(SolutionItems) = preProject
+		NaturalLanguageProcessing\natural_language_processing.py = NaturalLanguageProcessing\natural_language_processing.py
+		NaturalLanguageProcessing\natural_language_processing.R = NaturalLanguageProcessing\natural_language_processing.R
+		NaturalLanguageProcessing\Restaurant_Reviews.tsv = NaturalLanguageProcessing\Restaurant_Reviews.tsv
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
