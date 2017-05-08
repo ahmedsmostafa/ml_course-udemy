@@ -71,6 +71,12 @@
     <Compile Include="21-naturallanguageprocessing.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="22-deeplearning-ann.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="23-deeplearning-cnn.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>
