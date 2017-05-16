@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
-dataset = pd.read_csv('Wine.csv')
+dataset = pd.read_csv('..\\DimensionalityReduction_PCA\\Wine.csv')
 X = dataset.iloc[:, 0:13].values
 y = dataset.iloc[:, 13].values
 
@@ -34,10 +34,13 @@ classifier.fit(X_train, y_train)
 
 # Predicting the Test set results
 y_pred = classifier.predict(X_test)
+y_pred
+y_test
 
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
+cm
 
 # Visualising the Training set results
 from matplotlib.colors import ListedColormap
