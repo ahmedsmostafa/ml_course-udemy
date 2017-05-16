@@ -77,6 +77,15 @@
     <Compile Include="23-deeplearning-cnn.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="24-dimensionreduction-pca.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="25-dimensionreduction-lda.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="26-dimensionreduction-pca_kernel.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>
