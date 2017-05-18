@@ -21,14 +21,29 @@ test_set = subset(dataset, split == FALSE)
 training_set[-3] = scale(training_set[-3])
 test_set[-3] = scale(test_set[-3])
 
-# Fitting classifier to the Training set
-# Create your classifier here
+# Apply Kernel PCA
+library(kernlab)
+kpca = kpca(~., data = training_set[-3], kernel = 'rbfdot', features = 2)
 
+training_set_pca = as.data.frame(predict(kpca, training_set))
+training_set_pca$Purchased = training_set$Purchased
+
+training_set = training_set_pca
+
+test_set_pca = as.data.frame(predict(kpca,test_set))
+test_set_pca$Purchased = test_set$Purchased
+
+test_set = test_set_pca
+
+#fitting logistic regression to training set
+classifier = glm(formula = Purchased ~ ., family = binomial, data = training_set)
 
 # Predicting the Test set results
-y_pred = predict(classifier, newdata = test_set[-3], type = 'class')
+y_pred = predict(classifier, newdata = test_set[-3], type = 'response')
+y_pred = ifelse(y_pred > 0.5, 1, 0)
+
 y_pred
-test_set$Purchased
+
 # Making the Confusion Matrix
 # cm = table(test_set[, 3], y_pred)
 cm = table(test_set$Purchased, y_pred)
@@ -40,7 +55,7 @@ set = training_set
 X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
 X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
 grid_set = expand.grid(X1, X2)
-colnames(grid_set) = c('Age', 'EstimatedSalary')
+colnames(grid_set) = c('V1', 'V2')
 y_grid = predict(classifier, newdata = grid_set)
 plot(set[, -3],
      main = 'RandomForest Classification (Training set)',
@@ -56,7 +71,7 @@ set = test_set
 X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
 X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
 grid_set = expand.grid(X1, X2)
-colnames(grid_set) = c('Age', 'EstimatedSalary')
+colnames(grid_set) = c('V1', 'V2')
 y_grid = predict(classifier, newdata = grid_set)
 plot(set[, -3], main = 'RandomForest Classification (Test set)',
      xlab = 'Age', ylab = 'Estimated Salary',
