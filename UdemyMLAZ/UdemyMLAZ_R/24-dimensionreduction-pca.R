@@ -27,6 +27,7 @@ training_set = training_set[c(2, 3, 1)]
 # Generate principal components for test set
 pca = preProcess(x = test_set[-14], method = 'pca', pcaComp = 2)
 test_set = predict(pca, test_set)
+
 #switch columns and bring Customer_Segment (index 1) to the end (index 3)
 test_set = test_set[c(2, 3, 1)]
 

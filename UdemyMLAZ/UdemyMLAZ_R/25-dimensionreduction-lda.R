@@ -1,37 +1,58 @@
 dataset = read.csv("..\\DimensionalityReduction_LDA\\Wine.csv")
 dataset
 
-#select only age and salary and purahcaes
-dataset = dataset[, 3:5]
-dataset
-
-# Encoding the target feature as factor
-dataset$Purchased = factor(dataset$Purchased, levels = c(0, 1))
-dataset
-
 # Splitting the dataset into the Training set and Test set
 # install.packages('caTools')
 library(caTools)
 set.seed(123)
-split = sample.split(dataset$Purchased, SplitRatio = 0.75)
+split = sample.split(dataset$Customer_Segment, SplitRatio = 0.8)
 training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
 
 # Feature Scaling
-training_set[-3] = scale(training_set[-3])
-test_set[-3] = scale(test_set[-3])
+training_set[-14] = scale(training_set[-14])
+test_set[-14] = scale(test_set[-14])
+
+# Applying LDA 
+#install.packages(MASS)
+library(MASS)
+
+# Generate lda components for training set
+lda = lda(formula = Customer_Segment ~ .,
+           data = training_set)
+#you need to transform the result of lda prediction from matrix to a dataframe
+training_set = as.data.frame(predict(lda, training_set))
+
+# remove class to the end of data.frame
+# remove the posterior columns
+training_set = training_set[c(5, 6, 1)]
+
+# Generate lda components for test set
+lda = lda(formula = Customer_Segment ~ .,
+           data = test_set)
+test_set = as.data.frame(predict(lda, test_set))
+
+# remove class to the end of data.frame
+# remove the posterior columns
+test_set = test_set[c(5, 6, 1)]
+
 
 # Fitting classifier to the Training set
-# Create your classifier here
-
+library(e1071)
+# Create your classifier here, the dependant variable now is called 'class'
+classifier = svm(formula = class ~ .,
+                    data = training_set,
+                    type = 'C-classification',
+                    kernel = 'linear')
 
 # Predicting the Test set results
-y_pred = predict(classifier, newdata = test_set[-3], type = 'class')
+y_pred = predict(classifier, newdata = test_set[-3])
 y_pred
-test_set$Purchased
+test_set$class
+
 # Making the Confusion Matrix
 # cm = table(test_set[, 3], y_pred)
-cm = table(test_set$Purchased, y_pred)
+cm = table(test_set$class, y_pred)
 cm
 
 # Visualising the Training set results
@@ -40,15 +61,21 @@ set = training_set
 X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
 X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
 grid_set = expand.grid(X1, X2)
-colnames(grid_set) = c('Age', 'EstimatedSalary')
+colnames(grid_set) = c('x.LD1', 'x.LD2')
 y_grid = predict(classifier, newdata = grid_set)
 plot(set[, -3],
-     main = 'RandomForest Classification (Training set)',
-     xlab = 'Age', ylab = 'Estimated Salary',
+     main = 'SVM with LDA (Training set)',
+     xlab = 'LD1', ylab = 'LD2',
      xlim = range(X1), ylim = range(X2))
 contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
-points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
-points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
+points(grid_set, pch = '.', col = ifelse(
+                                    y_grid == 2, 'deepskyblue',
+                                    ifelse(y_grid == 1, 'springgreen3', 'tomato')
+                                    ))
+points(set, pch = 21, bg = ifelse(
+                              set[, 3] == 2, 'blue3',
+                              ifelse(set[, 3] == 1, 'green4', 'red3')
+                              ))
 
 # Visualising the Test set results
 library(ElemStatLearn)
@@ -56,14 +83,20 @@ set = test_set
 X1 = seq(min(set[, 1]) - 1, max(set[, 1]) + 1, by = 0.01)
 X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
 grid_set = expand.grid(X1, X2)
-colnames(grid_set) = c('Age', 'EstimatedSalary')
+colnames(grid_set) = c('x.LD1', 'x.LD2')
 y_grid = predict(classifier, newdata = grid_set)
-plot(set[, -3], main = 'RandomForest Classification (Test set)',
-     xlab = 'Age', ylab = 'Estimated Salary',
+plot(set[, -3], main = 'SVM with PCA (Test set)',
+     xlab = 'LD1', ylab = 'LD2',
      xlim = range(X1), ylim = range(X2))
 contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
-points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
-points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
+points(grid_set, pch = '.', col = ifelse(
+                                    y_grid == 2, 'deepskyblue',
+                                    ifelse(y_grid == 1, 'springgreen3', 'tomato')
+                                    ))
+points(set, pch = 21, bg = ifelse(
+                              set[, 3] == 2, 'blue3',
+                              ifelse(set[, 3] == 1, 'green4', 'red3')
+                              ))
 
 #plot the decision tree
 plot(classifier)
