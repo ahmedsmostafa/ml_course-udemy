@@ -35,7 +35,7 @@ X_test = sc.transform(X_test)
 from sklearn.decomposition import PCA
 dr = PCA(n_components = 2)
 X_train = dr.fit_transform(X_train)
-X_test = dr.fit_transform(X_test)
+X_test = dr.transform(X_test)
 
 # we defined first None in number of components because
 # we will create an explained variance vector that shows 
