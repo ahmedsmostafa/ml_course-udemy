@@ -86,6 +86,15 @@
     <Compile Include="26-dimensionreduction-pca_kernel.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="27-modelselection_gridsearch.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="28-modelselection-kfold.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="29-xgboost.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pyspark.py" />
   </ItemGroup>
   <PropertyGroup>
