@@ -1,7 +1,7 @@
 # XGBoost
 
 # Importing the dataset
-dataset = read.csv('Churn_Modelling.csv')
+dataset = read.csv('..\\XGBoost\\Churn_Modelling.csv')
 dataset = dataset[4:14]
 
 # Encoding the categorical variables as factors
